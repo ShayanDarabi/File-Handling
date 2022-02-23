@@ -12,7 +12,7 @@ Then run:
 
 ```
 python src/main.py
-``
+```
 
 ## An example of the detail of my own messy directory
 You can see the pie chart of one of my directories:
