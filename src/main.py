@@ -2,13 +2,13 @@ import shutil
 from collections import Counter
 from pathlib import Path
 import matplotlib.pyplot as plt
-
+from typing import Union
 class OrgenizedDirectory:
     """
     This class is used to orgnize files in a directory by creating and moving
     files into directories based on their file's extension.
     """
-    def __init__(self,directory):
+    def __init__(self, directory:Union[str,Path]):
         self.directory = Path(directory)
         if not self.directory.exists():
             raise FileNotFoundError(f"{self.directory} doesn't exist.")
@@ -37,7 +37,6 @@ class OrgenizedDirectory:
         and moves those files into their specific directory.
         """
         for file in self.directory.iterdir():
-
             #exclude other directories and hidden files
             if file.is_dir() or file.name.startswith("."):
                 continue
@@ -58,7 +57,7 @@ class OrgenizedDirectory:
                 Path(DEST_DIR).mkdir()
                 shutil.move(str(file), str(DEST_DIR))
 
-    def chatstat(self):
+    def dirstat(self):
         """
         this method plots a pie chart and saves it into the given directory
         as a png file based on the files' extentions.
@@ -84,7 +83,7 @@ class OrgenizedDirectory:
         plt.savefig(Path(self.directory) / "chatstat.png")
 
 #the lines below were for testing the script and it didn't fail:)
-# if __name__ == "__main__":
-#     directory = OrgenizedDirectory("/mnt/c/users/shayan/downloads")
-#     directory.chatstat()
-#     directory()
+if __name__ == "__main__":
+    directory = OrgenizedDirectory("/mnt/c/users/shayan/downloads")
+    directory.dirstat()
+    directory()
