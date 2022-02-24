@@ -77,7 +77,7 @@ class OrgenizedDirectory:
             label.append(element[0])
             number_of_file.append(element[1])
 
-        # plot a pie chart of directory contents and save it in the directory which was gien to the class
+        # plot a pie chart of directory contents and save it in the directory which was given to the class
         plt.figure(figsize=(15, 15), dpi=80)
         plt.pie(x=number_of_file, labels=label, shadow=True, autopct='%1.1f%%')
         plt.savefig(Path(self.directory) / "chatstat.png")
