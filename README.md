@@ -1,22 +1,25 @@
 # File-Handling
-A python project that handle your files in a given directory.
-I tried to handle the most conventional file types like:
-- .png
-- .csv
-- .pdf
-- .xlsx
-- .exe
-- .zip
-- .jpg
-- .docx
-- .pptx
-- .txt
-- .rar
-- .json
-- .mpp
-- .py
-- .mp3
-- .mp4
+A mini python project that handle your files in a given directory. If your file type is in one of the formats below, it will move them in a suitable directory. If 
+there are some file types which are not supported, it will move them into **other** directory.
+I tried to handle the most conventional file types.
+| Supported File Format| Destination Directory |
+| ---------------------| --------------------- |
+| .png                 | image                 |
+| .csv                 | data                  |
+| .pdf                 | document              |
+| .xlsx                | excel                 |
+| .exe                 | executable            |
+| .zip                 | compressed            |
+| .jpg                 | image                 | 
+| .docx                | document              |
+| .pptx                | presentation          |
+| .txt                 | document              |
+| .rar                 | compressed            |
+| .json                | data                  |
+| .mpp                 | project               |
+| .py                  | python                |
+| .mp3                 | audio                 |
+| .mp4                 | video                 |
 
 ## How To Run
 First add the `src` to `PYTHONPATH`. If you don't know how to do it, write this command in your terminal:
