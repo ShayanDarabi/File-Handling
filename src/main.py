@@ -80,10 +80,15 @@ class OrgenizedDirectory:
         # plot a pie chart of directory contents and save it in the directory which was gien to the class
         plt.figure(figsize=(15, 15), dpi=80)
         plt.pie(x=number_of_file, labels=label, shadow=True, autopct='%1.1f%%')
-        plt.savefig(Path(self.directory) / "chatstat.png")
+        plt.savefig(Path(self.directory) / "dirstat.png")
+
+    #define the string representation of the class
+    def __str__(self):
+        return f"{self.directory} directory is ready to be organized"
 
 #the lines below were for testing the script and it didn't fail:)
-if __name__ == "__main__":
-    directory = OrgenizedDirectory("/mnt/c/users/shayan/downloads")
-    directory.dirstat()
-    directory()
+# if __name__ == "__main__":
+#     directory = OrgenizedDirectory("/mnt/c/users/shayan/downloads")
+#     print(directory)
+#     directory.dirstat()
+#     directory()
